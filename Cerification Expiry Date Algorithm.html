@@ -1,0 +1,175 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><br>
+                               <b><span style='font-size:22.0pt;line-height:
+107%'>Certification Expiry Date algorithm</span></b></p>
+
+<p class=MsoNormal>                                <br>
+<br>
+<span style='font-size:16.0pt;line-height:107%'>1.In UI <b>Mycertifications</b>
+Screen in below certifications Expiry date is calculated in UI using <b>certExpDate,</b></span><span
+style='font-size:16.0pt;line-height:107%'> <b><span lang=EN-IN>completionDate
+,Status</span></b></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>From
+learning plan table and using <b>validityperiod</b> as <u>calculatedexpirydate</u>
+from certification table.<br>
+<br>
+# Check if the status is &quot;completed&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>if status ==
+&quot;completed&quot;:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    </span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    # Check
+if certExpDate is not empty</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    if
+certExpDate is not empty:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        </span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        #
+Check if certExpDate is greater than today's date</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        if
+certExpDate &gt; today:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+# Return a message indicating the certificate is active until certExpDate</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+return &quot;Completed (active until certExpDate)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>       
+else:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+# Return a message indicating the certificate has expired since certExpDate</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+return &quot;Expired since certExpDate&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    </span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    # If
+certExpDate is empty, check if CalculatedExpDate is not empty</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    elif
+CalculatedExpDate is not empty:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        </span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        #
+Calculate the expiration date by adding CalculatedExpDate months to
+completionDate</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>       
+expirationDate = completionDate + CalculatedExpDate months</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        </span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        #
+Check if the calculated expiration date is greater than today's date</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        if
+expirationDate &gt; today:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+# Return a message indicating the certificate is active</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+return &quot;Completed (active)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>       
+else:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+# Return a message indicating the certificate has expired since the calculated
+expiration date</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>           
+return &quot;Expired since expirationDate&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    </span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    # If
+both certExpDate and CalculatedExpDate are empty</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>    else:</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>        #
+Return a message indicating the certificate is active</span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;line-height:107%'>       
+return &quot;Completed (active)&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>summary:</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>If
+status is &quot;completed&quot; and certExpDate is a future date:</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>&quot;Completed
+(active until dd-mmm-yyyy)&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>If
+status is &quot;completed&quot; and certExpDate is a past date:</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>&quot;Expired
+since : dd-mmm-yyyy&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>If
+both dates are completion Date and Calculated expiry date blank but status is
+&quot;completed&quot;:</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:16.0pt;line-height:107%'>&quot;Completed
+(active)&quot;</span></p>
+
+</div>
+
+</body>
+
+</html>
